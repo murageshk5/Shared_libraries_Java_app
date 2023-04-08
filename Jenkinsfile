@@ -1,15 +1,15 @@
 @Library ('Java-Shared-Libraries') _
 
 
-parameters{
-    choice(name:'action', choices: 'create\ndelete', description:'Choose create/delete')
-}
 
 
 
 pipeline {
 
-    agent any
+        parameters{
+            choice(name:'action', choices:'create\ndelete', description:'Choose create/delete')
+            }
+        agent any
 
         stages{
 
