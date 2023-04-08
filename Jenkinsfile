@@ -1,3 +1,6 @@
+@library('Java-Shared-Libraries') _
+
+
 pipeline {
 
     agent any
@@ -5,11 +8,13 @@ pipeline {
         stages{
             stage("Git Chekout") {
                 steps{
-                    script{
+                      gitCheckout (
 
-                      git branch: 'main', credentialsId: 'github-auth', url: 'https://github.com/murageshk5/Shared_libraries_Java_app.git'
+                        branch: "main",
+                        url: "https://github.com/murageshk5/Shared_libraries_Java_app.git"
+                        credentials: 'github-auth'
 
-                    }
+                    )
                 }
             }
         }
