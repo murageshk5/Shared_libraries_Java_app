@@ -1,4 +1,4 @@
-@Library ('Java-Shared-Libraries@master') _
+@Library ('Java-Shared-Libraries') _
 
 
 pipeline {
