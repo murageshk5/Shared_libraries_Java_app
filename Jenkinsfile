@@ -10,9 +10,8 @@ pipeline {
                 steps{
                       gitCheckout (
 
-                        branch: "main",
-                        url: "https://github.com/murageshk5/Shared_libraries_Java_app.git",
-                        credentialsId: 'github-auth'
+                        branch: [["main"]],
+                        url: [["https://github.com/murageshk5/Shared_libraries_Java_app.git",credentialsId: 'github-auth']]
 
                     )
                 }
