@@ -11,7 +11,7 @@ pipeline {
                       gitCheckout (
 
                         branch: "main",
-                        url: "https://github.com/murageshk5/Shared_libraries_Java_app.git"
+                        url: "https://github.com/murageshk5/Shared_libraries_Java_app.git",
                         credentials: 'github-auth'
 
                     )
