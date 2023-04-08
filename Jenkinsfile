@@ -12,8 +12,9 @@ pipeline {
     agent any
 
         stages{
-            when { expression { params.action == 'create' } }
+
             stage("Git Chekout") {
+            when { expression { params.action == 'create' } }
                 steps{
                       gitCheckout (
                         branch:"main",
@@ -21,8 +22,9 @@ pipeline {
                     )
                 }
             }
-            when { expression { params.action == 'create' } }
+
             stage("Mvn Unit Test") {
+            when { expression { params.action == 'create' } }
                 steps{
                     script{
 
@@ -31,8 +33,9 @@ pipeline {
                     }
                 }
             }
-            when { expression { params.action == 'create' } }
+
             stage("Mvn Intigration Test") {
+            when { expression { params.action == 'create' } }
                 steps{
                     script{
 
@@ -43,6 +46,7 @@ pipeline {
             }
 
             stage("Static code analysis") {
+            when { expression { params.action == 'create' } }
                 steps{
                     script{
                         withSonarQubeEnv(credentialsId: 'sonar-auth') {
