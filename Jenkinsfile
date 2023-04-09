@@ -50,7 +50,7 @@ pipeline {
                 steps{
                     script{
 
-                        def credentialsId = 'sonar-auth'
+                        credentialsId = 'sonar-auth'
                         staticCodeAnalysis(credentialsId)
 
                     }
@@ -62,7 +62,7 @@ pipeline {
                 steps{
                     script{
 
-                        def credentialsId = 'sonar-auth'
+                        credentialsId = 'sonar-auth'
                         sonarQualityGateStatus(credentialsId)
 
                     }
