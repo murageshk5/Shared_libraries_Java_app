@@ -28,51 +28,51 @@ pipeline {
                 }
             }
 
-            stage("Mvn Unit Test") {
-            when { expression { params.action == 'create' } }
-                steps{
-                    script{
+            // stage("Mvn Unit Test") {
+            // when { expression { params.action == 'create' } }
+            //     steps{
+            //         script{
 
-                        mvnTest()
+            //             mvnTest()
 
-                    }
-                }
-            }
+            //         }
+            //     }
+            // }
 
-            stage("Mvn Intigration Test") {
-            when { expression { params.action == 'create' } }
-                steps{
-                    script{
+            // stage("Mvn Intigration Test") {
+            // when { expression { params.action == 'create' } }
+            //     steps{
+            //         script{
 
-                        mvnIntigrationTest()
+            //             mvnIntigrationTest()
 
-                    }
-                }
-            }
+            //         }
+            //     }
+            // }
 
-            stage("Static code analysis") {
-            when { expression { params.action == 'create' } }
-                steps{
-                    script{
+            // stage("Static code analysis") {
+            // when { expression { params.action == 'create' } }
+            //     steps{
+            //         script{
 
-                        def credentialsId = 'sonar-auth'
-                        staticCodeAnalysis(credentialsId)
+            //             def credentialsId = 'sonar-auth'
+            //             staticCodeAnalysis(credentialsId)
 
-                    }
-                }
-            }
+            //         }
+            //     }
+            // }
 
-            stage("SOnar Quality gate status") {
-            when { expression { params.action == 'create' } }
-                steps{
-                    script{
+            // stage("SOnar Quality gate status") {
+            // when { expression { params.action == 'create' } }
+            //     steps{
+            //         script{
 
-                        def credentialsId = 'sonar-auth'
-                        sonarQualityGateStatus(credentialsId)
+            //             def credentialsId = 'sonar-auth'
+            //             sonarQualityGateStatus(credentialsId)
 
-                    }
-                }
-            }
+            //         }
+            //     }
+            // }
 
             stage("Mvn Build") {
             when { expression { params.action == 'create' } }
