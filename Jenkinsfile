@@ -95,6 +95,17 @@ pipeline {
                     }
                 }
             }
+
+            stage("Docker image scan") {
+            when { expression { params.action == 'create' } }
+                steps{
+                    script{
+
+                        dockerImageScan ("${params.DockerHubName}", "${params.ImageName}", "${params.ImageTag}",)
+
+                    }
+                }
+            }
             
         }
 }
