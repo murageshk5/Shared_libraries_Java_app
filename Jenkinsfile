@@ -74,7 +74,7 @@ pipeline {
             //     }
             // }
 
-            stage("Mvn Build") {
+            stage("Mvn Build : Maven") {
             when { expression { params.action == 'create' } }
                 steps{
                     script{
@@ -85,7 +85,7 @@ pipeline {
                 }
             }
 
-            stage("Docker image build") {
+            stage("Docker image build : Docker") {
             when { expression { params.action == 'create' } }
                 steps{
                     script{
@@ -96,7 +96,7 @@ pipeline {
                 }
             }
 
-            stage("Docker image scan") {
+            stage("Docker image scan : trivy ") {
             when { expression { params.action == 'create' } }
                 steps{
                     script{
@@ -107,7 +107,7 @@ pipeline {
                 }
             }
 
-            stage("Docker image push to Docker Hub") {
+            stage("Docker image push to Docker Hub : Dockerhub") {
             when { expression { params.action == 'create' } }
                 steps{
                     script{
