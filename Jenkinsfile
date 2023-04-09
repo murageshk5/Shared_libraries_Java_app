@@ -9,7 +9,7 @@ pipeline {
         parameters{
 
             choice(name:'action', choices:'create\ndelete', description:'Choose create/delete')
-            string(name: 'ImageName', defaultValue: 'Shared_libraries_Java_app', description: 'Give the name for docker image')
+            string(name: 'ImageName', defaultValue: 'shared_libraries_java_app', description: 'Give the name for docker image')
             string(name: 'ImageTag', defaultValue: 'v1', description: 'Give the tag for docker image')
             string(name: 'DockerHubName', defaultValue: 'murageshk5', description: 'Specify the dockerhub account name to push docker image')
             }
