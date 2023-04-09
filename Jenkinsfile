@@ -49,11 +49,10 @@ pipeline {
             when { expression { params.action == 'create' } }
                 steps{
                     script{
-                        withSonarQubeEnv(credentialsId: 'sonar-auth') {
 
-                        staticCodeAnalysis()
+                        credentialsId = 'sonar-auth'
+                        staticCodeAnalysis(credentialsId)
 
-                        }
                     }
                 }
             }
