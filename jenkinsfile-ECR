@@ -107,7 +107,7 @@ pipeline {
                 }
             }
 
-            stage("Docker image push to ECR : ECR") {
+            stage("Docker image push : ECR") {
             when { expression { params.action == 'create' } }
                 steps{
                     script{
